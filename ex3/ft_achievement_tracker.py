@@ -7,8 +7,10 @@ if __name__ == "__main__":
     names = ["alice", "bob", "charlie"]
     arr = [alice, bob, charlie]
     
-    for i in range(0, 3):
+    i = 0
+    while i < 3:        
         print(f"Player {names[i]} achievements: {arr[i]}")
+        i+=1
 
     print()     
     print("=== Achievement Analytics ===")
