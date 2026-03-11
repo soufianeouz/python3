@@ -51,7 +51,8 @@ a = [
 {'id': 50, 'player': 'alice', 'event_type': 'login', 'timestamp': '2024-01-15T19:36', 'data': {'level': 7, 'score_delta': -25, 'zone': 'pixel_zone_5'}}
 ]
 
-def ft_generator(data):
+
+def Stream_Wizard(data):
     print("=== Game Data Stream Processor ===\n")
     print(f"Processing {len(data)} game events...")
     count = 0
@@ -98,23 +99,18 @@ def ft_generator(data):
     print("=== Generator Demonstration ===")
 
 
-
-def ft_prime(n):
-    prime_num = 2
+def ft_Fibonacci(n):
+    f0 = 0
+    f1 = 1
     i = 0
-    while i < 5:
-        j = 2
-        check = 1
-        while j < prime_num:
-            if prime_num%j == 0:
-                check = 0
-                break
-            j+=1
-            
-        if check == 1:
-            i+=1
-            yield prime_num
-        prime_num+=1
+    print("Fibonacci sequence (first 10):", end=" ")
+    while i < n:
+        yield f0
+        tmp = f0
+        f0 = f1
+        f1 = f1 + tmp
+        i+=1
+
 
 def ft_prime(n):
     prime_num = 2
@@ -133,23 +129,19 @@ def ft_prime(n):
             i+=1
             yield prime_num
         prime_num+=1
-ft_generator(a)
-
-n = 5
-count = 0
-for i in ft_prime(n):
-    if count < n - 1:
-        print(i, end=", ")
-    else:
-        print(i)
-    count+=1
-
-if __name__ == "__main__":
-    ft_generator(a)
 
 
-
-
+def main(data):
+    Stream_Wizard(data)
+    """ this call function ft_Fibonacci that genarate the fibo number and its passed how many fibo number u want"""
+    n = 10
+    count = 0
+    for i in ft_Fibonacci(n):
+        if count < n - 1:
+            print(i, end=", ")
+        else:
+            print(i)
+        count+=1
     """ this call function ft_prime that genarate the primes number and its passed how many prime number u want"""
     n = 5
     count = 0
@@ -159,3 +151,7 @@ if __name__ == "__main__":
         else:
             print(i)
         count+=1
+
+    
+if __name__ == "__main__":
+    main(a)
