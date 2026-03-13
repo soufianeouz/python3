@@ -5,9 +5,10 @@ if __name__ == "__main__":
     scores = []
 
     if count == 1:
-        print(f"No scores provided. Usage: python3 {sys.argv[0]} <score1> <score2> ...")
+        print(f"No scores provided. Usage: python3 {sys.argv[0]} "
+              f"<score1> <score2> ...")
     else:
-        for arg in range(1,count):
+        for arg in range(1, count):
             try:
                 value = int(sys.argv[arg])
                 scores.append(value)
@@ -23,4 +24,3 @@ if __name__ == "__main__":
             print(f"Score range: {max(scores) - min(scores)}")
         else:
             print("No valid scores to calculate stats.")
-            
